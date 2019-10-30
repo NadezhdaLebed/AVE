@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Switch, Route } from 'react-router-dom';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import history from './history';
+import theme from './theme';
 
-function App() {
+// Route imports
+import HomePage from './pages/HomePage';
+import BrandPage from './pages/BrandPage';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <MuiThemeProvider theme={theme}>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/brand" component={BrandPage} />
+        </Switch>
+      </MuiThemeProvider>
+    </Router>
   );
-}
+};
 
 export default App;

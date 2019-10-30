@@ -1,0 +1,65 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react",
+    "import",
+    "babel"
+  ],
+  "settings": {
+    "react": {
+      "version": "16.8.6"
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": {
+          "resolve": {
+            "modules": ["app", "node_modules"]
+          }
+        }
+      }
+    }
+  },
+  "rules": {
+    "no-console": ["warn", { "allow": ["error", "info"] }],
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
+    "consistent-return": ["off", { "treatUndefinedAsUnspecified": false }],
+    "react/destructuring-assignment": "off",
+    "import/no-unresolved": "off",
+    "new-cap": "off",
+    "no-nested-ternary": "off",
+    "no-else-return": ["error", { "allowElseIf": true } ],
+    "react/prop-types": "warn",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/state-in-constructor": ["off", "never"],
+    "react/jsx-fragments": ["off", "syntax"],
+    "import/no-extraneous-dependencies": ["off"],
+    "import/extensions": ["off"],
+    "import/no-duplicates": ["off"],
+    "import/order": ["off"],
+    "import/no-self-import": ["off"],
+    "import/no-cycle": ["off"],
+    "import/no-named-as-default": ["off"],
+    "import/no-named-as-default-member": ["off"],
+    "import/named": ["off"],
+    "import/no-useless-path-segments": ["off"]
+  }
+}
