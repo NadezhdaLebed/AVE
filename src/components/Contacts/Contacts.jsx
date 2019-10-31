@@ -2,7 +2,12 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ContactItem from '../../ui-kit/ContactItem/ContactItem';
 import CONTACTS from '../../constants/contacts';
-import { FacebookIcon } from '../../ui-kit/Icons';
+import {
+  FacebookIcon,
+  TwitterIcon,
+  InstagramIcon,
+  PinterestIcon,
+} from '../../ui-kit/Icons';
 
 const useStyles = makeStyles({
   contacts: {
@@ -52,6 +57,40 @@ const useStyles = makeStyles({
       color: '#00c8c8',
     },
   },
+  bottom: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: '62px',
+  },
+  heading: {
+    fontSize: '36px',
+    fontWeight: '300',
+    lineHeight: '1.33',
+    letterSpacing: '1.8px',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    color: '#ffffff',
+    backgroundColor: '#333333',
+    padding: '62px 53px',
+  },
+  social: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '83px 172px',
+    listStyle: 'none',
+    backgroundColor: '#00c8c8',
+  },
+  socialItem: {
+    height: '34px',
+    marginLeft: '30px',
+    '&:first-child': {
+      marginLeft: '0',
+    },
+  },
+  icon: {
+    fontSize: '34px',
+    color: '#ffffff',
+  },
 });
 
 const Contacts = () => {
@@ -89,7 +128,9 @@ const Contacts = () => {
         </div>
         <div className={classes.bottom}>
           <h2 className={classes.heading}>
-            <b>award winner</b>fashion awards 2016
+            <b>award winner</b>
+            <br />
+            fashion awards 2016
           </h2>
           <ul className={classes.social}>
             <li className={classes.socialItem}>
@@ -109,7 +150,7 @@ const Contacts = () => {
                 rel="noopener noreferrer"
                 href="https://twitter.com"
               >
-                <FacebookIcon className={classes.icon} />
+                <TwitterIcon className={classes.icon} />
               </a>
             </li>
             <li className={classes.socialItem}>
@@ -119,7 +160,7 @@ const Contacts = () => {
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/"
               >
-                <FacebookIcon className={classes.icon} />
+                <InstagramIcon className={classes.icon} />
               </a>
             </li>
             <li className={classes.socialItem}>
@@ -129,7 +170,7 @@ const Contacts = () => {
                 rel="noopener noreferrer"
                 href="https://www.pinterest.com"
               >
-                <FacebookIcon className={classes.icon} />
+                <PinterestIcon className={classes.icon} />
               </a>
             </li>
           </ul>
