@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
+    backgroundColor: '#f8f8f8',
     paddingTop: '38px',
   },
   wrapper: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles({
     color: '#222222',
     textDecoration: 'none',
     textTransform: 'uppercase',
+    zIndex: 1,
   },
   list: {
     display: 'flex',
@@ -33,6 +35,7 @@ const useStyles = makeStyles({
   },
   item: {
     marginLeft: '50px',
+    zIndex: 1,
     '&:first-child': {
       marginLeft: '0',
     },
@@ -79,7 +82,33 @@ const Navigation = () => {
             />
           </li>
           <li className={classes.item}>
-            <NavigationItem text="womens" path="/" />
+            <NavigationItem
+              text="womens"
+              path="/"
+              isHover
+              items={[
+                {
+                  title: 'casuals',
+                  items: [
+                    { label: 'Jackets', path: '/' },
+                    { label: 'Hoodies & Sweatshirts', path: '/' },
+                    { label: 'Polo Shirts', path: '/' },
+                    { label: 'Sportswear', path: '/' },
+                    { label: 'Trousers & Chinos', path: '/' },
+                    { label: 'T-Shirts', path: '/' },
+                  ],
+                },
+                {
+                  title: 'formal',
+                  items: [
+                    { label: 'Jackets', path: '/' },
+                    { label: 'Shirts', path: '/' },
+                    { label: 'Suits', path: '/' },
+                    { label: 'Trousers', path: '/' },
+                  ],
+                },
+              ]}
+            />
           </li>
           <li className={classes.item}>
             <NavigationItem text="the brand" path="/" />
@@ -88,7 +117,29 @@ const Navigation = () => {
             <NavigationItem text="local stores" path="/" />
           </li>
           <li className={classes.item}>
-            <NavigationItem text="look book" path="/" />
+            <NavigationItem
+              text="look book"
+              path="/"
+              isHover
+              items={[
+                {
+                  title: 'Our Lookbooks',
+                  items: [
+                    { label: 'Latest Posts (mixed)', path: '/' },
+                    { label: 'Men’s Lookbook', path: '/' },
+                    { label: 'Women’s Lookbook', path: '/' },
+                  ],
+                },
+                {
+                  title: 'Your Lookbook',
+                  items: [
+                    { label: 'View and Edit', path: '/' },
+                    { label: 'Share', path: '/' },
+                    { label: 'Delete', path: '/' },
+                  ],
+                },
+              ]}
+            />
           </li>
         </ul>
         <SearchBox />

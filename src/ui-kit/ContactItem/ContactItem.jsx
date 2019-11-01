@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+import cn from 'classnames';
 
 const propTypes = {
   title: PropTypes.string,
+  className: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -15,6 +17,7 @@ const propTypes = {
 const defaultProps = {
   title: '',
   items: [],
+  className: '',
 };
 
 const useStyles = makeStyles({
@@ -49,10 +52,10 @@ const useStyles = makeStyles({
 
 const ContactItem = (props) => {
   const classes = useStyles();
-  const { title, items } = props;
+  const { title, items, className } = props;
 
   return (
-    <ul className={classes.list}>
+    <ul className={cn(classes.list, className)}>
       <h3 className={classes.title}>{title}</h3>
       {items.map((item) => (
         <li key={item.label} className={classes.item}>

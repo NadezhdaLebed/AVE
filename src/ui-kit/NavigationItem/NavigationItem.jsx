@@ -36,16 +36,53 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     textDecoration: 'none',
     paddingTop: '10px',
+    '&:hover': {
+      '& $text': {
+        color: '#00c8c8',
+      },
+      '& $icon': {
+        color: '#00c8c8',
+        transform: 'rotate(180deg)',
+      },
+    },
   },
   text: {
     fontSize: '13px',
     lineHeight: '1.54',
     textTransform: 'uppercase',
     color: '#222222',
+    transition: 'all 0.3s ease',
   },
   icon: {
-    fontSize: '13',
+    fontSize: '13px',
     color: '#989898',
+    transform: 'translateX(-2px)',
+    transition: 'all 0.3s ease',
+  },
+  paper: {
+    boxShadow: '0px 17px 24px 0 rgba(0, 0, 0, 0.14)',
+    backgroundColor: '#f8f8f8',
+    padding: '30px',
+  },
+  container: {
+    display: 'flex',
+  },
+  promotion: {
+    fontSize: '36px',
+    lineHeight: '1.33',
+    letterSpacing: '1.8px',
+    textAlign: 'center',
+    color: '#ffffff',
+    backgroundColor: '#333333',
+    padding: '63px 53px',
+    marginTop: '62px',
+  },
+  contactItem: {
+    width: '50%',
+    marginRight: '50px',
+    '&:last-child': {
+      marginRight: '0',
+    },
   },
 });
 
@@ -80,9 +117,10 @@ const NavigationItem = (props) => {
         {({ TransitionProps }) => (
           <Fade {...TransitionProps}>
             <div className={classes.paper}>
-              <div>
+              <div className={classes.container}>
                 {items.map((item) => (
                   <ContactItem
+                    className={classes.contactItem}
                     key={item.title}
                     title={item.title}
                     items={item.items}
