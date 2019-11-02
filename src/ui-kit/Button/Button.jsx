@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 const propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   to: PropTypes.string,
 };
@@ -21,6 +22,12 @@ const useStyles = makeStyles({
     color: '#454647',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
+    fontSize: '16px',
+    letterSpacing: '3.2px',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    padding: '23px 33px',
+    outline: 'none',
     '&:hover': {
       backgroundColor: '#00c8c8',
       color: 'white',
@@ -33,38 +40,32 @@ const useStyles = makeStyles({
     color: '#454647',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
+    fontSize: '16px',
+    letterSpacing: '3.2px',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    padding: '23px 33px',
     '&:hover': {
       backgroundColor: '#00c8c8',
       color: 'white',
       border: 'solid 2px #00c8c8',
     },
   },
-  text: {
-    fontSize: '16px',
-    letterSpacing: '3.2px',
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    color: 'inherit',
-    padding: '23px 33px',
-  },
 });
 
 const Button = (props) => {
   const classes = useStyles();
-  const { className, text, to } = props;
+  const { className, children, to } = props;
 
   return (
     <React.Fragment>
       {to !== '' ? (
-        // <Link to={to} className={cn(classes.link, className)}>
-        //   <p className={classes.text}>{text}</p>
-        // </Link>
-        <button type="button" className={cn(classes.button, className)}>
-          <p className={classes.text}>{text}</p>
-        </button>
+        <Link to={to} className={cn(classes.link, className)}>
+          {children}
+        </Link>
       ) : (
         <button type="button" className={cn(classes.button, className)}>
-          <p className={classes.text}>{text}</p>
+          {children}
         </button>
       )}
     </React.Fragment>

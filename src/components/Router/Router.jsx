@@ -3,8 +3,8 @@ import { Switch } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 
 // Route imports
-import HomePage from '../../pages/HomePage';
-import BrandPage from '../../pages/BrandPage';
+import HomePage from '../../pages/HomePage/HomePage';
+import BrandPage from '../../pages/BrandPage/BrandPage';
 
 const Router = () => {
   return (

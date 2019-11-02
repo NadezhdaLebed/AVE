@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import Button from '../ui-kit/Button/Button';
-import LookBookCard from '../ui-kit/LookbookCard/LookbookCard';
+import Button from '../../ui-kit/Button/Button';
+import LookBookCard from '../../ui-kit/LookbookCard/LookbookCard';
 
 const useStyles = makeStyles({
   banner: {
@@ -10,6 +10,8 @@ const useStyles = makeStyles({
     position: 'relative',
     backgroundColor: '#f8f8f8',
     zIndex: 0,
+    height: '100vh',
+    maxHeight: '830px',
   },
   title: {
     fontSize: '450px',
@@ -18,19 +20,20 @@ const useStyles = makeStyles({
     textAlign: 'center',
     color: '#575153',
     zIndex: 1,
+    userSelect: 'none',
   },
   img: {
     top: '-94px',
-    left: '15%',
+    left: '10%',
     width: '100%',
-    maxWidth: '25vw',
-    height: '100%',
-    maxHeight: '270vh',
+    maxWidth: '33vw',
+    height: '100vh',
+    maxHeight: '920px',
     position: 'absolute',
     zIndex: -1,
   },
   button: {
-    margin: '122px 10% 122px auto',
+    margin: '100px 10% 0 auto',
   },
   lookBookCards: {
     display: 'flex',
@@ -58,7 +61,7 @@ const HomePage = () => {
           src="../assets/png/home.png"
           alt="avenue fashion"
         />
-        <Button className={classes.button} text="shop men’s collection" />
+        <Button className={classes.button}>shop men’s collection</Button>
       </div>
       <div className={classes.lookBookCards}>
         <LookBookCard
@@ -81,7 +84,7 @@ const HomePage = () => {
           className={classes.lookBook}
           img="../assets/png/youLook.png"
           title="your lookbook"
-          text="See an item you like and click the  button to add it to your lookbook where you can create your own perfect look.
+          text="See an item you like and click the 	&#9825; button to add it to your lookbook where you can create your own perfect look.
           It’s like your own boutique!"
           path="/"
         />

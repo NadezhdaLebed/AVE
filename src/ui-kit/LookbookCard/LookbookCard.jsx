@@ -24,10 +24,9 @@ const useStyle = makeStyles({
     backgroundColor: '#f8f8f8',
     padding: '43px 40px 0px 9px',
   },
-  images: {},
   img: {
-    width: '237px',
-    height: '487px',
+    minWidth: '210px',
+    height: '380px',
   },
   lookBook: {
     textAlign: 'right',
@@ -42,13 +41,11 @@ const useStyle = makeStyles({
   },
   text: {
     fontFamily: 'Roboto, sans-serif',
-    fontSize: '13px',
+    fontSize: '15px',
     lineHeight: '1.47',
     color: '#727272',
     marginTop: '29px',
-  },
-  button: {
-    marginTop: '31px',
+    marginBottom: '50px',
   },
 });
 
@@ -59,9 +56,7 @@ const LookBookCard = (props) => {
 
   return (
     <div className={cn(classes.container, className)}>
-      <div className={classes.images}>
-        <img className={classes.img} src={img} alt={text} />
-      </div>
+      <img className={classes.img} src={img} alt={text} />
       <div className={classes.lookBook}>
         <h2 className={classes.title}>
           <b>{words[0]}</b>
@@ -69,7 +64,7 @@ const LookBookCard = (props) => {
           {words[1]}
         </h2>
         <p className={classes.text}>{text}</p>
-        <Button className={classes.button} text="view now" to={path} />
+        <Button className={classes.button} to={path}>view now</Button>
       </div>
     </div>
   );
