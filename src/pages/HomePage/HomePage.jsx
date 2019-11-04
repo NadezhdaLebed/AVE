@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Button from '../../ui-kit/Button/Button';
-import LookBookCard from '../../ui-kit/LookbookCard/LookbookCard';
+import LookBookCard from '../../components/Home/LookbookCard/LookbookCard';
+import HomeTabs from '../../components/Home/HomeTabs/HomeTabs';
 
 const useStyles = makeStyles({
   banner: {
@@ -63,6 +64,7 @@ const HomePage = () => {
         />
         <Button className={classes.button}>shop men’s collection</Button>
       </div>
+      <HomeTabs />
       <div className={classes.lookBookCards}>
         <LookBookCard
           className={classes.lookBook}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
 import cn from 'classnames';
-import Button from '../Button/Button';
+import Button from '../../../ui-kit/Button/Button';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -64,7 +64,9 @@ const LookBookCard = (props) => {
           {words[1]}
         </h2>
         <p className={classes.text}>{text}</p>
-        <Button className={classes.button} to={path}>view now</Button>
+        <Button className={classes.button} to={path}>
+          view now
+        </Button>
       </div>
     </div>
   );
