@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     backgroundColor: '#f8f8f8',
     paddingTop: '38px',
+    paddingBottom: '38px',
   },
   wrapper: {
     width: '85%',
@@ -55,7 +56,7 @@ const Navigation = () => {
           <li className={classes.item}>
             <NavigationItem
               text="mens"
-              path="/"
+              path="/mens"
               isHover
               items={[
                 {
@@ -84,7 +85,7 @@ const Navigation = () => {
           <li className={classes.item}>
             <NavigationItem
               text="womens"
-              path="/"
+              path="/womens"
               isHover
               items={[
                 {
@@ -111,15 +112,15 @@ const Navigation = () => {
             />
           </li>
           <li className={classes.item}>
-            <NavigationItem text="the brand" path="/" />
+            <NavigationItem text="the brand" path="/brand" />
           </li>
           <li className={classes.item}>
-            <NavigationItem text="local stores" path="/" />
+            <NavigationItem text="local stores" path="/localStore" />
           </li>
           <li className={classes.item}>
             <NavigationItem
               text="look book"
-              path="/"
+              path="/lookBook"
               isHover
               items={[
                 {

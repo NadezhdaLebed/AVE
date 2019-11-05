@@ -24,13 +24,12 @@ const useStyles = makeStyles({
     userSelect: 'none',
   },
   img: {
-    top: '-94px',
+    position: 'absolute',
+    top: '-132px',
+    bottom: 0,
     left: '10%',
     width: '100%',
     maxWidth: '33vw',
-    height: '100vh',
-    maxHeight: '920px',
-    position: 'absolute',
     zIndex: -1,
   },
   button: {
