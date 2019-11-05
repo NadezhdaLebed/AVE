@@ -19,17 +19,18 @@ const useStyles = makeStyles({
   root: {
     width: '85%',
     height: '100%',
-    maxHeight: '1330px',
+    maxHeight: '1400px',
     margin: '0 auto',
     minWidth: '1170px',
     marginTop: '60px',
-    padding: '60px 0',
+    padding: '54px 0',
     borderTop: '1px solid #eeeeee',
     borderBottom: '1px solid #eeeeee',
   },
   tabPanel: {
     display: 'flex',
     flexWrap: 'wrap',
+    paddingTop: '58px',
   },
   productCard: {
     width: '23.5%',
@@ -50,6 +51,27 @@ const useStyles = makeStyles({
       transform: 'translateY(-47%)',
     },
   },
+  appBar: {
+    height: '22px',
+    backgroundColor: 'transparent',
+    border: 0,
+    boxShadow: 'none',
+  },
+  tabs: {
+    fontSize: '13px',
+    lineHeight: '1.54',
+    color: '#727272',
+  },
+  tab: {
+    padding: 0,
+    minWidth: 'auto',
+    opacity: 1,
+    minHeight: '22px',
+    marginRight: '50px',
+  },
+  selected: {
+    color: '#00c8c8',
+  },
 });
 
 export default function FullWidthTabs() {
@@ -67,20 +89,39 @@ export default function FullWidthTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar className={classes.appBar} position="static" color="default">
         <Tabs
+          classes={{ root: classes.tabs }}
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
           aria-label="full width tabs example"
+          indicatorColor="none"
         >
-          <Tab label="popular" {...a11yProps(0)} />
-          <Tab label="new arrivals" {...a11yProps(1)} />
-          <Tab label="best sellers" {...a11yProps(2)} />
-          <Tab label="special offers" {...a11yProps(3)} />
-          <Tab label="Icoming soon" {...a11yProps(4)} />
+          <Tab
+            classes={{ root: classes.tab, selected: classes.selected }}
+            label="popular"
+            {...a11yProps(0)}
+          />
+          <Tab
+            classes={{ root: classes.tab, selected: classes.selected }}
+            label="new arrivals"
+            {...a11yProps(1)}
+          />
+          <Tab
+            classes={{ root: classes.tab, selected: classes.selected }}
+            label="best sellers"
+            {...a11yProps(2)}
+          />
+          <Tab
+            classes={{ root: classes.tab, selected: classes.selected }}
+            label="special offers"
+            {...a11yProps(3)}
+          />
+          <Tab
+            classes={{ root: classes.tab, selected: classes.selected }}
+            label="Icoming soon"
+            {...a11yProps(4)}
+          />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -102,6 +143,7 @@ export default function FullWidthTabs() {
               price={product.price}
               discount={product.discount}
               images={product.images}
+              description={product.description}
             />
           ))}
         </TabPanel>
@@ -119,6 +161,7 @@ export default function FullWidthTabs() {
               price={product.price}
               discount={product.discount}
               images={product.images}
+              description={product.description}
             />
           ))}
         </TabPanel>
@@ -136,6 +179,7 @@ export default function FullWidthTabs() {
               price={product.price}
               discount={product.discount}
               images={product.images}
+              description={product.description}
             />
           ))}
         </TabPanel>
@@ -153,6 +197,7 @@ export default function FullWidthTabs() {
               price={product.price}
               discount={product.discount}
               images={product.images}
+              description={product.description}
             />
           ))}
         </TabPanel>
@@ -170,6 +215,7 @@ export default function FullWidthTabs() {
               price={product.price}
               discount={product.discount}
               images={product.images}
+              description={product.description}
             />
           ))}
         </TabPanel>

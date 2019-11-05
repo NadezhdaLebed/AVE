@@ -47,7 +47,7 @@ export default [
     price: 29.95,
     images: [
       'https://i.imgur.com/fF6nJya.png',
-      'hhttps://i.imgur.com/xVmwIPU.png',
+      'https://i.imgur.com/xVmwIPU.png',
     ],
     description:
       'Classic casual t-shirt for women on the move. 100% cotton. A hard-wearing sports t-shirt with microvent technology.',

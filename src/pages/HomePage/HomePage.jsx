@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Button from '../../ui-kit/Button/Button';
 import LookBookCard from '../../components/Home/LookbookCard/LookbookCard';
-import HomeTabs from '../../components/Home/HomeTabs/HomeTabs';
+import HomeTabs from '../../components/Home/ProductTabs/ProductTabs';
 
 const useStyles = makeStyles({
   banner: {
