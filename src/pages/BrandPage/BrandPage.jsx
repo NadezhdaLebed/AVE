@@ -88,8 +88,16 @@ const BrandPage = () => {
       />
       <div className="wrapper">
         <div className={classes.content}>
-          <img className={classes.img} src="../assets/png/brand1.png" alt="brand img" />
-          <img className={classes.img} src="../assets/png/brand2.png" alt="brand img" />
+          <img
+            className={classes.img}
+            src="../assets/png/brand1.png"
+            alt="brand img"
+          />
+          <img
+            className={classes.img}
+            src="../assets/png/brand2.png"
+            alt="brand img"
+          />
           <h2 className={classes.title}>our values, vision and strategy</h2>
           <h3 className={classes.subtitle}>
             The above image would be a great place for an advertising video
@@ -120,7 +128,11 @@ const BrandPage = () => {
             rhoncus quis consecteur es. Donec pulvinar tempor lorem a pretium
             justo interdum.
           </p>
-          <img className={classes.img} src="../assets/png/brand3.png" alt="brand img" />
+          <img
+            className={classes.img}
+            src="../assets/png/brand3.png"
+            alt="brand img"
+          />
           <h2 className={classes.title}>Ethical trading</h2>
           <h3 className={classes.subtitle}>
             we oversee the working conditions of the people in the supply chain

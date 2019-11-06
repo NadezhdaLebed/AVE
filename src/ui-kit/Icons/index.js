@@ -5,3 +5,8 @@ export { default as PinterestIcon } from './PinterestIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as InfoIcon } from './InfoIcon';
 export { default as ArrowsIcon } from './ArrowsIcon';
+export { default as LocationIcon } from './LocationIcon';
+export { default as TelephoneIcon } from './TelephoneIcon';
+export { default as LinkIcon } from './LinkIcon';
+export { default as EmailIcon } from './EmailIcon';
+export { default as ClockIcon } from './ClockIcon';

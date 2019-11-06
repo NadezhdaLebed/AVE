@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Popper, Fade } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import ArrowIcon from '@material-ui/icons/ExpandMore';
@@ -44,6 +44,14 @@ const useStyles = makeStyles({
         color: '#00c8c8',
         transform: 'rotate(180deg)',
       },
+    },
+  },
+  active: {
+    '& $text': {
+      color: '#00c8c8',
+    },
+    '& $icon': {
+      color: '#00c8c8',
     },
   },
   text: {
@@ -103,16 +111,17 @@ const NavigationItem = (props) => {
 
   return (
     <React.Fragment>
-      <Link
+      <NavLink
         to={path}
         className={cn(classes.link, className)}
+        activeClassName={classes.active}
         onMouseEnter={handleOpen}
         onMouseLeave={handleClose}
         aria-describedby={id}
       >
         <span className={classes.text}>{text}</span>
         {isHover && <ArrowIcon className={classes.icon} />}
-      </Link>
+      </NavLink>
       <Popper id={id} open={open && isHover} anchorEl={anchorEl} transition>
         {({ TransitionProps }) => (
           <Fade {...TransitionProps}>
