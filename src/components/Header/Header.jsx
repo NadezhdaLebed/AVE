@@ -44,7 +44,7 @@ const Header = () => {
           <a className={classes.link} href="/">
             Register
           </a>
-          <a className={classes.link} href="/">
+          <a className={classes.link} href="/signUp">
             Sign In
           </a>
           <EmptyButton className={classes.EmptyButton} />
