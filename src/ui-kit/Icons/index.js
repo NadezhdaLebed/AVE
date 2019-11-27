@@ -11,3 +11,4 @@ export { default as LinkIcon } from './LinkIcon';
 export { default as EmailIcon } from './EmailIcon';
 export { default as ClockIcon } from './ClockIcon';
 export { default as FavoriteIcon } from './FavoriteIcon';
+export { default as GoogleIcon } from './GoogleIcon';

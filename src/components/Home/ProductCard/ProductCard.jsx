@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import InfoIcon from '../../../ui-kit/Icons/InfoIcon';
 import ArrowsIcon from '../../../ui-kit/Icons/ArrowsIcon';
@@ -166,7 +167,7 @@ const ProductCard = (props) => {
   });
 
   return (
-    <div className={cn(classes.container, className)}>
+    <Link className={cn(classes.container, className)} to="/product">
       <div className={classes.prices}>
         <p className={priceClassName}>{`£${price}`}</p>
         {discount && <p className={classes.discount}>{`£${discount}`}</p>}
@@ -198,7 +199,7 @@ const ProductCard = (props) => {
           </li>
         </ul>
       </div>
-    </div>
+    </Link>
   );
 };
 
