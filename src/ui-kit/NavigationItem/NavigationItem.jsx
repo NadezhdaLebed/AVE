@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Popper, Fade } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
@@ -36,6 +36,7 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     textDecoration: 'none',
     paddingTop: '10px',
+    position: 'relative',
     '&:hover': {
       '& $text': {
         color: '#00c8c8',
@@ -43,6 +44,9 @@ const useStyles = makeStyles({
       '& $icon': {
         color: '#00c8c8',
         transform: 'rotate(180deg)',
+      },
+      '& $paper': {
+        opacity: 1,
       },
     },
   },
@@ -68,9 +72,14 @@ const useStyles = makeStyles({
     transition: 'all 0.3s ease',
   },
   paper: {
+    width: '467px',
+    position: 'absolute',
+    top: '50px',
+    opacity: 0,
     boxShadow: '0px 17px 24px 0 rgba(0, 0, 0, 0.14)',
     backgroundColor: '#f8f8f8',
     padding: '30px',
+    transition: 'all 0.3s ease',
   },
   container: {
     display: 'flex',
@@ -97,55 +106,35 @@ const useStyles = makeStyles({
 const NavigationItem = (props) => {
   const classes = useStyles();
   const { text, className, isHover, items, path } = props;
-  const [anchorEl, setAnchorEl] = React.useState(false);
-  const open = Boolean(anchorEl);
-  const id = open ? 'hover-menu' : undefined;
-
-  const handleOpen = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
-    <React.Fragment>
-      <NavLink
-        to={path}
-        className={cn(classes.link, className)}
-        activeClassName={classes.active}
-        onMouseEnter={handleOpen}
-        onMouseLeave={handleClose}
-        aria-describedby={id}
-      >
-        <span className={classes.text}>{text}</span>
-        {isHover && <ArrowIcon className={classes.icon} />}
-      </NavLink>
-      <Popper id={id} open={open && isHover} anchorEl={anchorEl} transition>
-        {({ TransitionProps }) => (
-          <Fade {...TransitionProps}>
-            <div className={classes.paper}>
-              <div className={classes.container}>
-                {items.map((item) => (
-                  <ContactItem
-                    className={classes.contactItem}
-                    key={item.title}
-                    title={item.title}
-                    items={item.items}
-                  />
-                ))}
-              </div>
-              <p className={classes.promotion}>
-                <b>Autumn sale!</b>
-                <br />
-                up to 50% off
-              </p>
-            </div>
-          </Fade>
-        )}
-      </Popper>
-    </React.Fragment>
+    <NavLink
+      to={path}
+      className={cn(classes.link, className)}
+      activeClassName={classes.active}
+    >
+      <span className={classes.text}>{text}</span>
+      {isHover && <ArrowIcon className={classes.icon} />}
+      {isHover && (
+        <div className={classes.paper}>
+          <div className={classes.container}>
+            {items.map((item) => (
+              <ContactItem
+                className={classes.contactItem}
+                key={item.title}
+                title={item.title}
+                items={item.items}
+              />
+            ))}
+          </div>
+          <p className={classes.promotion}>
+            <b>Autumn sale!</b>
+            <br />
+            up to 50% off
+          </p>
+        </div>
+      )}
+    </NavLink>
   );
 };
 

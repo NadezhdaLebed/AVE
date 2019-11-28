@@ -11,26 +11,34 @@ export default [
   },
   {
     id: 3,
+    type: 'women',
+  },
+  {
+    id: 4,
     model: 'MJ1',
     img: 'https://i.imgur.com/V0pZkoX.png',
   },
   {
-    id: 4,
+    id: 5,
     model: 'M2',
     img: 'https://i.imgur.com/XqhhFcJ.png',
   },
   {
-    id: 5,
+    id: 6,
     model: 'W2',
     img: 'https://i.imgur.com/fF6nJya.png',
   },
   {
-    id: 6,
+    id: 7,
     model: 'W3',
     img: 'https://i.imgur.com/nkdkNEi.png',
   },
   {
-    id: 7,
+    id: 8,
+    type: 'win',
+  },
+  {
+    id: 9,
     model: 'W4 ',
     img: 'https://i.imgur.com/0laJVnM.png',
   },

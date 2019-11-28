@@ -41,10 +41,10 @@ const Header = () => {
       <div className="wrapper">
         <CurrencyButton className={classes.CurrencyButton} />
         <nav className={classes.nav}>
-          <a className={classes.link} href="/">
+          <a className={classes.link} href="/sign-up">
             Register
           </a>
-          <a className={classes.link} href="/signUp">
+          <a className={classes.link} href="/sign-up">
             Sign In
           </a>
           <EmptyButton className={classes.EmptyButton} />

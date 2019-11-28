@@ -2,8 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Banner from '../../ui-kit/Banner/Banner';
 import LookBookCard from '../../components/LookBook/LookbookCard/LookbookCard';
-import WomenLookBook from '../../components/LookBook/WomenLookBook/WomenLookBook';
-import WinLookBook from '../../components/LookBook/WinLookBook/WinLookBook';
 import ModelTabs from '../../components/LookBook/LookBookTabs/ModelTabs';
 
 const useStyles = makeStyles({
@@ -32,8 +30,6 @@ const LookbookPage = () => {
         text="Latest Posts - mens &#38; womens"
       />
       <ModelTabs />
-      <WomenLookBook />
-      <WinLookBook />
       <div className={classes.lookBookCards}>
         <LookBookCard
           className={classes.lookBook}

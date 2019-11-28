@@ -11,18 +11,20 @@ import ProductPage from '../../pages/ProductPage/ProductPage';
 import SignUpPage from '../../pages/SignUpPage/SignUpPage';
 import MensPage from '../../pages/MensPage/MensPage';
 import WomensPage from '../../pages/WomensPage/WomensPage';
+import ProductTablePage from '../../pages/ProductTablePage/ProductTablePage';
 
 const Router = () => {
   return (
     <Switch>
       <Layout exact path="/" component={HomePage} />
       <Layout path="/brand" component={BrandPage} />
-      <Layout path="/localStore" component={LocalStorePage} />
-      <Layout path="/lookBook" component={LoookbookPage} />
+      <Layout path="/local-store" component={LocalStorePage} />
+      <Layout path="/look-book" component={LoookbookPage} />
       <Layout path="/product" component={ProductPage} />
-      <Layout path="/signUp" component={SignUpPage} />
+      <Layout path="/sign-up" component={SignUpPage} />
       <Layout path="/mens" component={MensPage} />
       <Layout path="/womens" component={WomensPage} />
+      <Layout path="/product-table" component={ProductTablePage} />
     </Switch>
   );
 };

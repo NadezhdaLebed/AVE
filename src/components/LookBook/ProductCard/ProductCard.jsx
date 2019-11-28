@@ -1,11 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { InfoIcon, FavoriteIcon } from '../../../ui-kit/Icons';
 
 const propTypes = {
   model: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+const defaultProps = {
+  className: '',
 };
 
 const useStyles = makeStyles({
@@ -30,20 +36,21 @@ const useStyles = makeStyles({
     position: 'absolute',
     top: '15px',
     left: '15px',
-    fontSize: '21px',
+    fontSize: '15px',
     fontWeight: '300',
     letterSpacing: '1.05px',
     color: '#9a9a9a',
     textTransform: 'uppercase',
   },
   img: {
-    width: '420px',
-    height: '500px',
+    width: '100%',
+    height: '100%',
+    maxHeight: '360px',
   },
   icons: {
     position: 'absolute',
-    top: '304px',
-    left: '150px',
+    top: '230px',
+    left: '105px',
     display: 'flex',
     transition: 'all 0.3s ease',
     opacity: 0,
@@ -63,10 +70,10 @@ const useStyles = makeStyles({
 
 const ProductCard = (props) => {
   const classes = useStyles();
-  const { model, img } = props;
+  const { model, img, className } = props;
 
   return (
-    <div className={classes.container}>
+    <div className={cn(classes.container, className)}>
       <p className={classes.model}>{`ref${model}`}</p>
       <img className={classes.img} src={img} alt={`product-${model}`} />
       <div className={classes.icons}>
@@ -78,5 +85,6 @@ const ProductCard = (props) => {
 };
 
 ProductCard.propTypes = propTypes;
+ProductCard.defaultProps = defaultProps;
 
 export default ProductCard;

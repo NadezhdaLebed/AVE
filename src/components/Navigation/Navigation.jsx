@@ -115,12 +115,12 @@ const Navigation = () => {
             <NavigationItem text="the brand" path="/brand" />
           </li>
           <li className={classes.item}>
-            <NavigationItem text="local stores" path="/localStore" />
+            <NavigationItem text="local stores" path="/local-store" />
           </li>
           <li className={classes.item}>
             <NavigationItem
               text="look book"
-              path="/lookBook"
+              path="/look-book"
               isHover
               items={[
                 {

@@ -7,6 +7,8 @@ import Tab from '@material-ui/core/Tab';
 import TabPanel from './TabPanel';
 import models from '../../../constants/models';
 import ProductCard from '../ProductCard/ProductCard';
+import WomenLookBook from '../WomenLookBook/WomenLookBook';
+import WinLookBook from '../WinLookBook/WinLookBook';
 
 function a11yProps(index) {
   return {
@@ -33,8 +35,17 @@ const useStyles = makeStyles({
     paddingTop: '58px',
   },
   productCard: {
-    width: '100%',
-    height: '100%',
+    width: '23.5%',
+    height: '10%',
+    marginRight: '2%',
+    marginBottom: '2%',
+    '&:nth-child(7n)': {
+      marginRight: '0',
+    },
+    '&:last-child': {
+      marginLeft: '2%',
+      marginRight: '0',
+    },
   },
   appBar: {
     height: '22px',
@@ -120,14 +131,22 @@ export default function FullWidthTabs() {
           index={0}
           dir={theme.direction}
         >
-          {models.map((model) => (
-            <ProductCard
-              key={model.id}
-              className={classes.productCard}
-              model={model.model}
-              img={model.img}
-            />
-          ))}
+          {models.map((model) => {
+            if (model.type) {
+              if (model.type === 'women') {
+                return <WomenLookBook />;
+              }
+              return <WinLookBook />;
+            }
+            return (
+              <ProductCard
+                key={model.id}
+                className={classes.productCard}
+                model={model.model}
+                img={model.img}
+              />
+            );
+          })}
         </TabPanel>
         <TabPanel
           className={classes.tabPanel}
